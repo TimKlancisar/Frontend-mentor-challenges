@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Expenses chart repo](https://github.com/TimKlancisar/Expenses-chart)
-- Live Site URL: [Link](https://rainbow-bublanina-c05408.netlify.app/)
+- Live Site URL: [Link](https://fm3-expenses-chart.netlify.app/)
 
 ## My process
 
