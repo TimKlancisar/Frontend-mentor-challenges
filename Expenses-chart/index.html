@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>FE Mentor | Expenses Chart</title>
+</head>
+<body>
+    <main>
+    <div class="chart flex">
+        <div class="chart__balance flex">
+            <div>
+                <p>My balance</p>
+                <p class="bold-text large-text">$921.48</p>
+            </div>
+            <div>
+                <img src="./images/logo.svg" alt="logo" />
+            </div>
+        </div>
+        <div class="chart__weekly flex">
+            <p class="bold-text large-text">Spending - Last 7 days</p>
+            <div class="chart__display flex"></div>
+            <div class="chart__current-month flex">
+                <div>
+                    <p>Total this month</p>
+                    <p class="bold-text xlarge-text">$478.33</p>
+                </div>
+                <div>
+                    <p class="bold-text">+2.4%</p>
+                    <p>from last month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
