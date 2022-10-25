@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+  <script src="less.js" type="text/javascript"></script>
+  <title>Frontend Mentor | Interactive card details form</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="card_details">
+    <div class="card_details__display">
+      <span class="card_details__card-front">
+        <div>
+          <img src="./images/card-logo.svg" alt="card-logo" />
+        </div>
+        <div class="card_details__card-front--bottom">
+          <div id="display-number">
+            0000 0000 0000 0000
+          </div>
+          <div>
+            <div id="display-name">Jane Appleseed</div>
+            <div>
+              <span id="display-month">00</span>
+              <span style="margin: 0 -7px;">/</span>
+              <span id="display-year">00</span>
+            </div>
+          </div>
+        </div>
+      </span>
+      <span class="card_details__card-back">
+        <div id="display-cvc">
+          000
+        </div>
+      </span>
+    </div>
+    <div class="card_details__form">
+      <div id="success">
+        <div id="check">
+          <span></span>
+        </div>
+        <div>
+          <h3>
+            Thank you!
+          </h3>
+          <p>We've added your card details</p>
+        </div>
+        <button type="button" class="form__button" onclick="location.reload()">Continue</button>
+      </div>
+      <form id="form">
+        <div>
+          <label for="cname" class="form__label">cardholder name</label>
+          <input class="form__input" type="text" id="cname" name="cname" value="" maxlength="28" placeholder="e.g. Jane Appleseed" autocomplete="off">
+          <div class="form__warning">warning</div>
+        </div>
+        <div>
+          <label for="cnumber" class="form__label">card number</label>
+          <input class="form__input" type="text" id="cnumber" name="cnumber" value="" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" onkeypress='return event.charCode !== 32' autocomplete="off">
+          <div class="form__warning">warning</div>
+        </div>
+        <div class="form__input--small">
+          <fieldset style="border: none;">
+            <div>
+              <span class="form__label">Exp. Date (
+              <label for="expMonth">MM</label>
+              /
+              <label for="expYear">YY</label>
+              )</span>
+            </div>
+            <div>
+              <input class="form__input" type="text" id="expMonth" name="date" value="" placeholder="MM" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' autocomplete="off">
+              <input class="form__input" type="text" id="expYear" name="date" value="" placeholder="YY" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' autocomplete="off">
+            </div>
+            <div class="form__warning">warning</div>         
+          </fieldset>
+          <div>
+            <label for="cvc" class="form__label">CVC</label>
+            <input class="form__input" type="text" id="cvc" name="cvc" value="" placeholder="e.g. 123" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57' autocomplete="off">
+            <div class="form__warning">warning</div>
+          </div>
+        </div>
+        <input class="form__button" type="submit" value="Confirm" onclick="finalCheck(event)">
+      </form>
+    </div>
+  </main>
+
+  <!-- Completed state start -->
+
+  <!--Thank you!
+  We've added your card details
+  Continue
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>-->
+  <script src="./script.js"></script>
+  <script>listeners();</script>
+</body>
+</html>

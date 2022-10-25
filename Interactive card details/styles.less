@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+/* Variables */
+@gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+@primariy-color: hsl(0, 100%, 66%);
+@white-color: hsl(0, 0%, 100%);
+@lightgray-violet: hsl(270, 3%, 87%);
+@darkgray-violet: hsl(279, 6%, 55%);
+@dark-violet: hsl(278, 68%, 11%);
+
+/* Mixins */
+.credit-card {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 447px;
+    height: 245px;
+}
+.flex {
+    display: flex;
+}
+/* Basic Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.card_details {
+    height: 100vh;
+    .flex();
+    justify-content: center;
+    background-image: url('./images/bg-main-desktop.png');
+    background-size: 30vw 100vh;
+    background-repeat: no-repeat;
+    .card_details__display {
+        width: 50vw;
+        .flex();
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        letter-spacing: .2em;
+        span {
+            border-radius: 15px;
+        }
+        .card_details__card-front {
+            background-image: url('./images/bg-card-front.png');
+            .credit-card();
+            .flex();
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1em;
+            padding: 1.6em;
+            & > div {
+                height: 50%;
+            }
+            .card_details__card-front--bottom {
+                width: 100%;
+                color: @white-color;
+                .flex();
+                flex-direction: column;
+                >div:first-child {
+                    flex: 1;
+                    font-size: 1.6em;
+                }
+                >div:last-child {
+                    .flex();
+                    justify-content: space-between;
+                    font-size: .8em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .card_details__card-back {
+            background-image: url('./images/bg-card-back.png');
+            .credit-card();
+            margin-left: 20%;
+            & > div {
+                .flex();
+                justify-content: flex-end;
+                align-items: center;
+                height: 100%;
+                padding: 3.5em;
+                color: @white-color;
+                font-size: .8em;
+                letter-spacing: .1em;
+            }
+        }
+    }
+    .card_details__form {
+        .flex();
+        justify-content: flex-start;
+        align-items: center;
+        width: 50vw;
+        padding-left: 5vw;
+        #success {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            width: 400px;
+            text-align: center;
+            #check {
+                position: relative;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, hsl(249, 99%, 64%) 0%, hsl(278, 94%, 30%) 65%);
+                span {
+                    position: absolute;
+                    left: 38%;
+                    top: 50%;
+                    transform: rotate(45deg) translate(-50%, -50%);
+                    height: 30px;
+                    width: 17px;
+                    border-bottom: 4px solid white;
+                    border-right: 4px solid white;
+                }
+            }
+            h3 {
+                font-size: 1.8em;
+                color: @dark-violet;
+                text-transform: uppercase;
+                padding: .4em 0;
+            }
+            p {
+                font-size: 1em;
+                color: @darkgray-violet
+            }
+        }
+        form {
+            .flex();
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: .4em;
+            width: 400px;
+        }
+        .form__label {
+            width: 100%;
+            color: @dark-violet;
+            font-size: .7em;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+        .form__input {
+            width: 100%;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1em;
+            padding: .5em;
+            border: none;
+            outline: 1px solid @lightgray-violet;
+            border-radius: 7px;
+            &:focus {
+                outline: 1px solid @dark-violet !important;
+            }
+        }
+        fieldset {
+            .flex();
+            flex-direction: column;
+            div {
+                .flex();
+                gap: .5em;
+                input {
+                    width: 80px !important;
+                }
+            }
+        }
+        .form__input--small {
+            .flex();
+            align-items: flex-end;
+            gap: 1em;
+            label {
+                margin: 0 -6px;
+            }
+        }
+        .form__button {
+            width: 100%;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1em;
+            padding: .8em;
+            margin-top: .5em;
+            background-color: @dark-violet;
+            color: @white-color;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .form__warning {
+            color: @primariy-color;
+            font-size: .7em;
+            margin-top: .3em;
+            visibility: hidden;
+        }
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 950px) {
+    .credit-card {
+        
+    }
+    .card_details {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-size: 100vw 30vh;
+        .card_details__display {
+            flex-direction: column-reverse;
+            gap: 0;
+            .card_details__card-front {
+                margin-top: -6em;
+                z-index: 1;
+                transform: scale(.7);
+            }
+            .card_details__card-back {
+                transform: scale(.7);
+            }
+        }
+        .card_details__form {
+            padding: 0;
+            width: 90%;
+        }
+    }
+}
