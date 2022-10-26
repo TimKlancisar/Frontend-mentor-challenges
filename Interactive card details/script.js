@@ -62,7 +62,6 @@ const finalCheck = (e) => {
         warning.textContent = "warning"
         warning.style.visibility = "hidden"
     })
-    console.log(constants.inputs[1].value)
     if (constants.inputs[0].value === "") {
         constants.warnings[0].textContent = "Can't leave empty!";
         constants.warnings[0].style.visibility = "visible";
